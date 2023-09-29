@@ -1,4 +1,97 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+  <title>Responsive Carousel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .carousel {
+      position: relative;
+      max-width: 800px;
+      margin: 50px auto;
+      overflow: hidden;
+      touch-action: pan-y;
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .carousel-container {
+      position: relative;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .carousel-title {
+      position: absolute;
+      top: -50px; /* Adjust this value to control the space between image and title */
+      left: 50%;
+      transform: translateX(-50%);
+      color: #000;
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .carousel-dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 8px;
+      background-color: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="carousel">
   <div class="carousel-inner">
     <div class="carousel-item">
       <div class="carousel-container">
@@ -98,4 +191,6 @@
   </script>
 
 </div>
+
+</body>
 </html>
