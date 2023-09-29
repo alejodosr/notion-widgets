@@ -15,30 +15,17 @@
       height: auto;
     }
 
-    .carousel-caption {
+    .carousel-title {
+      font-family: monospace;
+      font-size: 1.0rem;
+      font-style: italic;
       text-align: center;
-      max-width: 100%;
-      white-space: normal;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* Number of lines to show */
+      -webkit-box-orient: vertical;
     }
 
-    .typed-text {
-      display: inline-block;
-    }
-
-    .typed-cursor {
-      display: inline-block;
-      font-weight: 100;
-      animation: blink 0.7s infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0;
-      }
-    }
   </style>
   <title>Responsive Carousel</title>
 </head>
@@ -49,22 +36,22 @@
     <div class="carousel-inner">
       <!-- Slide 1 -->
       <div class="carousel-item active">
-        <h3 class="text-center typed-text"><span class="typed-cursor">|</span><i>Dynamic Title 1</i></h3>
+        <h3 class="carousel-title">Dynamic Text 1. This is a very long title to test the typing effect and text wrapping.</h3>
         <img src="https://source.unsplash.com/random/800x400" class="d-block w-100" alt="Image 1">
       </div>
       <!-- Slide 2 -->
       <div class="carousel-item">
-        <h3 class="text-center typed-text"><span class="typed-cursor">|</span><i>Dynamic Title 2 With a Much Longer Text</i></h3>
+        <h3 class="carousel-title">Dynamic Text 2. Another long title to test the typing effect and text wrapping in the carousel.</h3>
         <img src="https://source.unsplash.com/random/800x401" class="d-block w-100" alt="Image 2">
       </div>
       <!-- Slide 3 -->
       <div class="carousel-item">
-        <h3 class="text-center typed-text"><span class="typed-cursor">|</span><i>Dynamic Title 3</i></h3>
+        <h3 class="carousel-title">Dynamic Text 3. Yet another long title to check the typing effect and text wrapping in the carousel.</h3>
         <img src="https://source.unsplash.com/random/800x402" class="d-block w-100" alt="Image 3">
       </div>
       <!-- Slide 4 -->
       <div class="carousel-item">
-        <h3 class="text-center typed-text"><span class="typed-cursor">|</span><i>Dynamic Title 4 With Another Long Title Text That Should Wrap</i></h3>
+        <h3 class="carousel-title">Dynamic Text 4. One more long title to ensure the typing effect and text wrapping work as expected.</h3>
         <img src="https://source.unsplash.com/random/800x403" class="d-block w-100" alt="Image 4">
       </div>
     </div>
@@ -90,22 +77,6 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script>
-  // Simulate typing effect for titles
-  $('.typed-text').each(function () {
-    var $text = $(this);
-    var text = $text.text();
-    $text.empty();
-    var cursor = $('<span class="typed-cursor">|</span>').appendTo($text);
-    var index = 0;
-    setInterval(function () {
-      $text.html('<i>' + text.substring(0, index) + '</i>');
-      if (index++ === text.length) {
-        index = 0;
-      }
-    }, 150);
-  });
-</script>
 
 </body>
 </html>
