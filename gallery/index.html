@@ -185,13 +185,18 @@
     });
 
     // Animate titles on load
-    titles.forEach(animateTitle);
+    titles.forEach((title, index) => {
+      setTimeout(() => {
+        animateTitle(title);
+      }, index * 1000);
+    });
 
     // Animate title function
     function animateTitle(titleElement) {
       let titleText = titleElement.textContent;
       titleElement.textContent = '';
       titleElement.style.opacity = 1;
+      titleElement.style.transition = 'opacity 1s ease-in-out';
 
       for (let i = 0; i < titleText.length; i++) {
         setTimeout(() => {
