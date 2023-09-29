@@ -119,11 +119,13 @@
     const carousel = document.querySelector('.carousel');
     const inner = document.querySelector('.carousel-inner');
     const dots = document.querySelectorAll('.dot');
+    const titles = document.querySelectorAll('.carousel-title');
     let currentIndex = 0;
 
     function showSlide(index) {
       const translateValue = -index * 100 + '%';
       inner.style.transform = 'translateX(' + translateValue + ')';
+      animateTitle(titles[index]);
     }
 
     function updateDots(index) {
@@ -142,18 +144,6 @@
       currentIndex = (currentIndex - 1 + dots.length) % dots.length;
       showSlide(currentIndex);
       updateDots(currentIndex);
-    }
-
-    function animateTitle(titleElement) {
-      let titleText = titleElement.textContent;
-      titleElement.textContent = '';
-      titleElement.style.opacity = 1;
-
-      for (let i = 0; i < titleText.length; i++) {
-        setTimeout(() => {
-          titleElement.textContent += titleText[i];
-        }, i * 100);
-      }
     }
 
     // Swipe gesture handling
@@ -195,8 +185,20 @@
     });
 
     // Animate titles on load
-    const titles = document.querySelectorAll('.carousel-title');
     titles.forEach(animateTitle);
+
+    // Animate title function
+    function animateTitle(titleElement) {
+      let titleText = titleElement.textContent;
+      titleElement.textContent = '';
+      titleElement.style.opacity = 1;
+
+      for (let i = 0; i < titleText.length; i++) {
+        setTimeout(() => {
+          titleElement.textContent += titleText[i];
+        }, i * 100);
+      }
+    }
   </script>
 
 </div>
