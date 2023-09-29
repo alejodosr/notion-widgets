@@ -14,8 +14,25 @@
       max-width: 100%;
       height: auto;
     }
+
+    .typed-text {
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: 2px;
+      animation: typing 3s steps(40, end);
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
   </style>
-  <title>Responsive Carousel</title>
+  <title>Responsive Carousel with Typing Effect</title>
 </head>
 <body>
 
@@ -24,22 +41,22 @@
     <div class="carousel-inner">
       <!-- Slide 1 -->
       <div class="carousel-item active">
-        <h3 class="text-center">Dynamic Text 1</h3>
+        <h3 class="text-center typed-text">Dynamic Text 1</h3>
         <img src="https://source.unsplash.com/random/800x400" class="d-block w-100" alt="Image 1">
       </div>
       <!-- Slide 2 -->
       <div class="carousel-item">
-        <h3 class="text-center">Dynamic Text 2</h3>
+        <h3 class="text-center typed-text">Dynamic Text 2</h3>
         <img src="https://source.unsplash.com/random/800x401" class="d-block w-100" alt="Image 2">
       </div>
       <!-- Slide 3 -->
       <div class="carousel-item">
-        <h3 class="text-center">Dynamic Text 3</h3>
+        <h3 class="text-center typed-text">Dynamic Text 3</h3>
         <img src="https://source.unsplash.com/random/800x402" class="d-block w-100" alt="Image 3">
       </div>
       <!-- Slide 4 -->
       <div class="carousel-item">
-        <h3 class="text-center">Dynamic Text 4</h3>
+        <h3 class="text-center typed-text">Dynamic Text 4</h3>
         <img src="https://source.unsplash.com/random/800x403" class="d-block w-100" alt="Image 4">
       </div>
     </div>
