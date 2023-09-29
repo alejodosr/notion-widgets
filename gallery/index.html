@@ -13,6 +13,7 @@
 
     body, html {
       overflow: hidden;
+      height: 100%;
     }
 
     .carousel {
@@ -25,13 +26,13 @@
 
     .carousel-inner {
       display: flex;
-      flex-direction: column;
       transition: transform 1s ease-in-out;
     }
 
     .carousel-item {
       box-sizing: border-box;
       position: relative;
+      width: 100%;
     }
 
     img {
@@ -93,16 +94,16 @@
   <div class="carousel-inner">
     <!-- Change the image URLs with your own or use Unsplash images -->
     <div class="carousel-item">
-      <div class="carousel-title">Random Title 1</div>
       <img src="https://source.unsplash.com/random/800x400" alt="Image 1">
+      <div class="carousel-title">Random Title 1</div>
     </div>
     <div class="carousel-item">
-      <div class="carousel-title">Random Title 2</div>
       <img src="https://source.unsplash.com/random/800x400" alt="Image 2">
+      <div class="carousel-title">Random Title 2</div>
     </div>
     <div class="carousel-item">
-      <div class="carousel-title">Random Title 3</div>
       <img src="https://source.unsplash.com/random/800x400" alt="Image 3">
+      <div class="carousel-title">Random Title 3</div>
     </div>
   </div>
 
@@ -124,7 +125,7 @@
 
     function showSlide(index) {
       const translateValue = -index * 100 + '%';
-      inner.style.transform = 'translateY(' + translateValue + ')';
+      inner.style.transform = 'translateX(' + translateValue + ')';
       animateTitle(titles[index]);
     }
 
@@ -147,25 +148,25 @@
     }
 
     // Swipe gesture handling
-    let touchStartY;
+    let touchStartX;
 
     function handleTouchStart(e) {
-      touchStartY = e.touches[0].clientY;
+      touchStartX = e.touches[0].clientX;
     }
 
     function handleTouchMove(e) {
-      if (!touchStartY) return;
+      if (!touchStartX) return;
 
-      const touchEndY = e.touches[0].clientY;
-      const deltaY = touchEndY - touchStartY;
+      const touchEndX = e.touches[0].clientX;
+      const deltaX = touchEndX - touchStartX;
 
-      if (deltaY > 50) {
+      if (deltaX > 50) {
         prevSlide();
-      } else if (deltaY < -50) {
+      } else if (deltaX < -50) {
         nextSlide();
       }
 
-      touchStartY = null;
+      touchStartX = null;
     }
 
     carousel.addEventListener('touchstart', handleTouchStart);
