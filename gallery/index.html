@@ -45,10 +45,13 @@
       left: 50%;
       transform: translateX(-50%);
       color: #000;
+      font-family: 'Inter', sans-serif;
       font-size: 24px;
       font-weight: 700;
       text-align: center;
       text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      white-space: nowrap;
     }
 
     .carousel-dots {
@@ -141,6 +144,18 @@
       updateDots(currentIndex);
     }
 
+    function animateTitle(titleElement) {
+      let titleText = titleElement.textContent;
+      titleElement.textContent = '';
+      titleElement.style.opacity = 1;
+
+      for (let i = 0; i < titleText.length; i++) {
+        setTimeout(() => {
+          titleElement.textContent += titleText[i];
+        }, i * 100);
+      }
+    }
+
     // Swipe gesture handling
     let touchStartX;
 
@@ -178,6 +193,10 @@
         updateDots(currentIndex);
       });
     });
+
+    // Animate titles on load
+    const titles = document.querySelectorAll('.carousel-title');
+    titles.forEach(animateTitle);
   </script>
 
 </div>
