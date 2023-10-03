@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    /* Add your custom styles here */
+    #carouselExample {
+      margin-top: 20px;
+      height: 500px; /* Set a fixed height for the carousel */
+    }
+
+    #carouselExample img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .carousel-title-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .carousel-title {
+      font-family: monospace;
+      font-size: 1.0rem;
+      font-style: italic;
+      text-align: left;
+    }
+    
+    .carousel-input {
+      font-family: monospace;
+      font-size: 1.0rem;
+      font-style: italic;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .carousel-image-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .carousel-divider {
+      border-top: 1px solid #ccc;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+  </style>
+  <title>Responsive Carousel</title>
+</head>
+<body>
+
+<div class="container">
+  <div id="carouselExample" class="carousel slide" data-ride="carousel" data-interval="20000">
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-title-container">
+          <h3 class="carousel-input">You ask us:<br> </h3>
+          <h3 class="carousel-title">"This is a LoFi song. I give you this reference image of an RPG game. No title."</h3>
+        </div>
+        <div class="carousel-image-container">
+          <h3 class="carousel-input">We give you:<br> </h3>
+          <img src="https://file.notion.so/f/f/21050b98-7ac6-4c43-8c83-0cac573927cf/0c7f1fe4-c7b6-42a1-bc48-a583545d11f8/gif_style_beach.gif?id=7e2e919c-7dc4-46c2-89e0-9c7a6cf6a0be&table=block&spaceId=21050b98-7ac6-4c43-8c83-0cac573927cf&expirationTimestamp=1696420800000&signature=fMxUkiW0FT1wtQ9dIaQ3qGWho4kOnlRCe1fJQ6BhVo4&downloadName=gif_style_beach.gif" class="d-block w-100" alt="Image 1">
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="carousel-title-container">
+          <h3 class="carousel-input">You ask us:<br> </h3>
+          <h3 class="carousel-title">"I make EDM. This is the reference neon style image, but I'd like a bicyle. Don't add title."</h3>
+        </div>
+        <div class="carousel-image-container">
+          <h3 class="carousel-input">We give you:<br> </h3>
+          <img src="https://file.notion.so/f/f/21050b98-7ac6-4c43-8c83-0cac573927cf/1f5d462d-651e-49c0-89e9-2bc9af46e376/gif_style_bike.gif?id=da038a66-c348-41ce-97fc-0d1b5d686b83&table=block&spaceId=21050b98-7ac6-4c43-8c83-0cac573927cf&expirationTimestamp=1696420800000&signature=rwjFNl3WtPSosQLQsUOnI5S-_KsVue13bdqrdwQENWU&downloadName=gif_style_bike.gif" class="d-block w-100" alt="Image 2">
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="carousel-title-container">
+          <h3 class="carousel-input">You ask us:<br> </h3>
+          <h3 class="carousel-title">"This is an industrial metal song. I give you this clown style image. Make one similar please."</h3>
+        </div>
+        <div class="carousel-image-container">
+          <h3 class="carousel-input">We give you:<br> </h3>
+          <img src="https://file.notion.so/f/f/21050b98-7ac6-4c43-8c83-0cac573927cf/e32938ac-7120-4824-bdc5-5b400ceece22/gif_style_clown.gif?id=f5af848a-06fe-4d5c-8d57-c4ee94bbc5c8&table=block&spaceId=21050b98-7ac6-4c43-8c83-0cac573927cf&expirationTimestamp=1696420800000&signature=CI7TZlAJypV7zqXcER204t_C3tcKdpT3HXc0UneOXLs&downloadName=gif_style_clown.gif" class="d-block w-100" alt="Image 3">
+        </div>
+      </div>
+    </div>
+    <!-- Navigation Arrows -->
+    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <!-- Carousel Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExample" data-slide-to="1"></li>
+      <li data-target="#carouselExample" data-slide-to="2"></li>
+    </ol>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
