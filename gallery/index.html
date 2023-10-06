@@ -48,6 +48,9 @@
       margin-bottom: 10px;
     }
 
+    .blurred-image {
+      filter: blur(20px); /* Set the desired blur amount */
+    }
   </style>
   <title>Responsive Carousel</title>
 </head>
@@ -64,7 +67,7 @@
         </div>
         <div class="carousel-image-container">
           <h3 class="carousel-input">We give you:<br> </h3>
-          <img src="https://alejodosr.github.io/notion-widgets/images/im_generation_transformer_title_5.12.1.png" class="d-block w-100" alt="Image 1" fetchpriority="high">
+          <img src="https://alejodosr.github.io/notion-widgets/images/placeholder.png" class="d-block w-100 blurred-image" data-src="https://alejodosr.github.io/notion-widgets/images/im_generation_transformer_title_5.12.1.png" alt="Image 1">
         </div>
       </div>
       <!-- Slide 2 -->
@@ -75,7 +78,7 @@
         </div>
         <div class="carousel-image-container">
           <h3 class="carousel-input">We give you:<br> </h3>
-          <img src="https://alejodosr.github.io/notion-widgets/images/im_variations_beach_2_4.14.1.png" class="d-block w-100" alt="Image 2" fetchpriority="high">
+          <img src="https://alejodosr.github.io/notion-widgets/images/placeholder.png" class="d-block w-100 blurred-image" data-src="https://alejodosr.github.io/notion-widgets/images/im_variations_beach_2_4.14.1.png" alt="Image 2">
         </div>
       </div>
       <!-- Slide 3 -->
@@ -86,18 +89,18 @@
         </div>
         <div class="carousel-image-container">
           <h3 class="carousel-input">We give you:<br> </h3>
-          <img src="https://alejodosr.github.io/notion-widgets/images/im_generation_clay_title_5.10.1.png" class="d-block w-100" alt="Image 3">
+          <img src="https://alejodosr.github.io/notion-widgets/images/placeholder.png" class="d-block w-100 blurred-image" data-src="https://alejodosr.github.io/notion-widgets/images/im_generation_clay_title_5.10.1.png" alt="Image 3">
         </div>
       </div>
       <!-- Slide 4 -->
       <div class="carousel-item">
         <div class="carousel-title-container">
           <h3 class="carousel-input">You ask us:<br> </h3>
-          <h3 class="carousel-title">"This song is K-Pop style. I'd like a beautiful brunnete girl in a manga-cartoonish style. <mark>Also, include my face there!</mark> And don't add title"</h3>
+          <h3 class="carousel-title">"This song is K-Pop style. I'd like a beautiful brunette girl in a manga-cartoonish style. <mark>Also, include my face there!</mark> And don't add title"</h3>
         </div>
         <div class="carousel-image-container">
           <h3 class="carousel-input">We give you:<br> </h3>
-          <img src="https://alejodosr.github.io/notion-widgets/images/gif_face_transfer_manga.gif" class="d-block w-100" alt="Image 4">
+          <img src="https://alejodosr.github.io/notion-widgets/images/placeholder.png" class="d-block w-100 blurred-image" data-src="https://alejodosr.github.io/notion-widgets/images/gif_face_transfer_manga.gif" alt="Image 4">
         </div>
       </div>
     <!-- Slide 5 -->
@@ -108,7 +111,7 @@
         </div>
         <div class="carousel-image-container">
           <h3 class="carousel-input">We give you:<br> </h3>
-          <img src="https://alejodosr.github.io/notion-widgets/images/gif_style_clown.gif" class="d-block w-100" alt="Image 5">
+          <img src="https://alejodosr.github.io/notion-widgets/images/placeholder.png" class="d-block w-100 blurred-image" data-src="https://alejodosr.github.io/notion-widgets/images/gif_style_clown.gif" alt="Image 5">
         </div>
       </div>
     </div>
@@ -135,6 +138,19 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var images = document.querySelectorAll('.blurred-image');
+
+    images.forEach(function(image) {
+      image.onload = function() {
+        image.classList.remove('blurred-image');
+      };
+      image.src = image.dataset.src;
+    });
+  });
+</script>
 
 </body>
 </html>
